@@ -8,11 +8,11 @@
 	  	
 	  	<meta name="description" content="Andrew Smith's Website">
 	  	<meta name="author" content="Andrew Smith">
-	
-	  	<link href="css/main.css" rel="stylesheet"/>
-	  	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-	  	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
 	  	
+	  	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	  	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+	  	<link href="css/main.css" rel="stylesheet"/>
 	  <!--[if lt IE 9]>
 	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	  <![endif]-->
@@ -20,37 +20,78 @@
 
 	<body>
 		
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-					</button>-->
-					<a class="navbar-brand" href="#">Andrew Smith</a>
-				</div>
+		<nav class="navbar navbar-default" role="navigation">
+			<!--Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		    	</button>
+		    	<!--<a class="navbar-brand" href="#">Brand Logo</a>-->
+		    </div>
+			
+			<a class="navbar-brand">Andy Smith</a>
+			
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Structural Engineering</a></li>
+					<li><a href="#">Music</a></li>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#">Projects</a></li>
+				</ul>
 				
-				<div class="collapse navbar-collapse navbar-right">
-					<ul class="nav navbar-nav">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Structural Engineering</a></li>
-						<li><a href="#">Music</a></li>
-						<li><a href="#">Projects</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Contact Me</a></li>
+				</ul>
+				
 			</div>
+
 		</nav>
 		
+		
+		<!--<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>    
+  </div>
+  <a class="navbar-brand" href="#">Brand</a>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+        <li><a href="#">Left</a></li>
+        <li><a href="#about">Left</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#about">Right</a></li>
+      <li><a href="#contact">Right</a></li>
+    </ul>
+  </div>
+</nav>-->
+		
+		
+		
 		<div class="jumbotron">
-	  		<h1 class="text-center">New website!</h1>
-	  		<p class="text-center">I have finally got round to making a website!</p>
-	  		<p class="text-center">Why?</p>
-	  		<p class="text-center">Because I thought I might need one and I wanted to learn how!</p>
-	  		<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">About me</a></p>
+			<div class="container">
+				<h1 class="text-center">New website!</h1>
+		  		<p class="text-center">I have finally got round to making a website!</p>
+		  		<p class="text-center">Why?</p>
+		  		<p class="text-center">Because I thought I might need one and I wanted to learn how to!</p>
+		  		<p class="text-center">Also I told Churchill Jazz Band I would make them one...</p>
+		  		<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">About me</a></p>
+			</div>
 		</div>
 		
 		<h1>Web Development</h1>
 		<p>We’re learning HTML</p>
-	  	<!--<script src="js/scripts.js"></script>-->
+		
+	  	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	  	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	</body>
 </html>
