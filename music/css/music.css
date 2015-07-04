@@ -5,7 +5,7 @@ html, body {
    	font-family: 'Open Sans', sans-serif;
 }
   
-
+/* This should be around line 4713 in your bootstrap.css */
 .navbar-collapse.collapse {
         text-align: center; /* Set this */
         display: block !important;
@@ -14,14 +14,9 @@ html, body {
         overflow: visible !important;
 }
 
+/* This should be around line 4866 in your bootstrap.css */
 .navbar-nav {
     display: inline-block;
     float: none;
     margin: 0;
-}
-
-h1 {
-	
-	text-align: center;
-	
 }
