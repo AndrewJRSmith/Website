@@ -43,8 +43,8 @@
 					<li class="{% block about_active %}{% endblock %}"><a {% block about_link %}href="{% url 'basic_pages.views.about' %}"{% endblock %}>About</a></li>
 					<li class="{% block structuralengineering_active %}{% endblock %}"><a {% block structuralengineering_link %}href="{% url 'basic_pages.views.structuralengineering' %}"{% endblock %}>Structural Engineering</a></li>
 					<li class="{% block music_active %}{% endblock %}"><a {% block music_link %}href="{% url 'basic_pages.views.music' %}"{% endblock %}>Music</a></li>
-					<li class="{% block projects_active %}{% endblock %}"><a {% block projects_link %}href="{% url 'basic_pages.views.projects' %}"{% endblock %}>Projects</a></li>
-					<li class="{% block scrapbook_active %}{% endblock %}"><a {% block scrapbook_link %}href="{% url 'basic_pages.views.scrapbook' %}"{% endblock %}>Scrapbook</a></li>
+					<li class="{% block projects_active %}{% endblock %}"><a {% block projects_link %}href="{% url 'projects.views.projects' %}"{% endblock %}>Projects</a></li>
+					<li class="{% block scrapbook_active %}{% endblock %}"><a {% block scrapbook_link %}href="{% url 'scrapbook.views.scrapbook' %}"{% endblock %}>Scrapbook</a></li>
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">

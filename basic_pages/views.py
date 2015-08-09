@@ -22,16 +22,6 @@ def music(request):
     return render(request, 'basic_pages/music.html', context_dict)
 
 
-def projects(request):
-    context_dict = []
-    return render(request, 'basic_pages/projects.html', context_dict)
-
-
-def scrapbook(request):
-    context_dict = []
-    return render(request, 'basic_pages/scrapbook.html', context_dict)
-
-
 def structuralengineering(request):
     context_dict = []
     return render(request, 'basic_pages/structuralengineering.html', context_dict)
