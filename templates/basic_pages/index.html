@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block home_active %}active{% endblock %}
 {% block home_link %}{% endblock %}
 
 {% block body_block %}
+<div class="bg"></div>
 <div class="jumbotron">
     <div class="container">
         <h1 class="text-center">New website!</h1>
@@ -16,5 +18,5 @@
 </div>
 
 <h1>I am currently migrating the website to Django! Check back soon for more developments...</h1>
-
+<img src="{% static "images/IMG_6594_CUT.JPG" %}"/>
 {% endblock %}

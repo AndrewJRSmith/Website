@@ -9,9 +9,38 @@
     <div class="col-md-12">
         <h1>Projects</h1>
         <p>
-            Over the years I've done several projects, so I am going to write them up in here.
-            I expect it'll take a sort of interactive blog format.
+            Welcome to my projects page!
+            Please browse below for more information about projects I have been involved with.
+            This includes both individual and team projects.
         </p>
+        {%  if Projects %}
+            {% for project in Projects %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                            <h4>{{ project.name }}
+                            {% if project.ongoing %}
+                                <span class="label label-success pull-right">Current</span>
+                            {% else %}
+                                <span class="label label-danger pull-right">Past</span>
+                            {% endif %}
+                            </h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            {{ project.description }}
+                        </p>
+                        {% if project.more_info %}
+                        <p class="text-center">
+                            <a class="btn btn-primary btn-small" href="more_info/{{ project.more_info }}" role="button">More information</a>
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+
+            {% endfor %}
+        {% endif %}
+
+
     </div>
 </div>
 
