@@ -5,6 +5,7 @@
 {% block about_link %}{% endblock %}
 
 {% block body_block %}
+    {% load staticfiles %}
 <div class="container">
     <div class="col-md-12">
         <h1>About me</h1>
@@ -30,7 +31,7 @@
             <li>Solid Mechanics</li>
             <li>Fluid Mechanics</li>
             <li>Thermodynamics</li>
-            <li>Strctures</li>
+            <li>Structures</li>
             <li>Material Science</li>
             <li>Electrical Engineering</li>
             <li>Information Engineering</li>
@@ -42,7 +43,7 @@
         <h3>MIT</h3>
         <p>
             I spent the third year of my degree at MIT in Boston, having been awarded a scholarship and a place on an exchange program.
-            This was a truely fantastic experience for which I am very grateful.
+            This was a truly fantastic experience for which I am very grateful.
             The university has an extensive catalogue of courses available, from which I was able to select a wide range of interesting classes:
         </p>
         <ul>
@@ -52,7 +53,7 @@
             <li>1.571  - Analysis of Structures</li>
             <li>1.572  - Structural Systems</li>
             <li>1.351  - Theoretical Soil Mechanics</li>
-            <li>1.977  - Resiliant Design</li>
+            <li>1.977  - Resilient Design</li>
             <li>15.618 - Law for Cutting-Edge Technologies</li>
             <li>15.900 - Competitive Strategy</li>
         </ul>
@@ -66,28 +67,33 @@
             I found this fascinating, and so started having hour-long weekly meetings with Caitlin to discuss my thoughts on the topic of structural engineering computation and optimisation.
             These then led to a UROP in the Spring Semester where I investigated computational techniques for better informing conceptual design.
             I plan to add a more detailed writeup in my 'Projects' section at a later date.
-
+        <div class="row">
         <h5><strong>Collier Memorial</strong></h5>
-        <p>
+        <p class="col-md-9">
             Throughout the year I helped John Ochsendorf with several aspects of the Collier Memorial on the MIT campus.
             This is a five legged vaulted granite dome dedicated to the memory of the MIT police officer Sean Collier who was tragically killed in the aftermath of the Boston Bombings.
             My efforts on this project were particularly focused on the testing of materials and construction techniques.
-            Early on we used large compression machines to investigate the mechanical properties of granite blocks along with the temporary plastic spacers that were placed inbetween.
+            Early on we used large compression machines to investigate the mechanical properties of granite blocks along with the temporary plastic spacers that were placed in between.
             Then during the construction process I spearheaded age vs strength testing on the grout used to fill the gaps between the stones to assess the implications of reducing the ageing time before loading.
             I also helped design, test and implement the method for checking how much arching action had developed while lowering the granite stones and helped collect the data on the day of the lowering.
             During the process I also carried out various other small tasks such as a basic thermal expansion analysis.
         </p>
-        <h5><strong>IASS Pavilion</strong></h5>
-        <p>
-            In the Spring Semester Caitlin Mueller announced that she wanted to enter a competition being held as part of the International Annual Structures Symposium (IASS) conference in 2015.
-            Teams from around the world were invited to design an architectural sculpture to be displayed in Amsterdam for the two months prior to the conference.
-            I had never had the chance to do something like this before so I jumped at the oportunity and helped the team finialise the design throughout the semester.
-            We decided to produce a set of 6m high pre-tensioned arches which all started at the same point on the ground and ended at the same point on a wall but gradually had a stronger and stronger inflection point half way up, such that when combined it looked like undulating waves.
-            This was based on previous work by Leonardo .... who wrote a script that produces post-tensioning solutions to stabilise discretised curves.
-            There were tight restrictions on weight and volume of materials, so we decided to laser-print stencils onto corrugated cardboard for folding into boxes on-site.
-            Cardboard tubes and straps were then used for the post-tensioning system.
-            As part of my contribution I helped design and construct LED lighing strips to be fitting to the arches, illuminating the underside of the boxes.
-        </p>
+        </div>
+        <div class="row">
+            <h5><strong>IASS Pavilion</strong></h5>
+            <p class="col-md-9">
+                In the Spring Semester Caitlin Mueller announced that she wanted to enter a competition being held as part of the International Annual Structures Symposium (IASS) conference in 2015.
+                Teams from around the world were invited to design an architectural sculpture to be displayed in Amsterdam for the two months prior to the conference.
+                I had never had the chance to do something like this before so I jumped at the opportunity and helped the team finalise the design throughout the semester.
+                We decided to produce a set of 6m high pre-tensioned arches which all started at the same point on the ground and ended at the same point on a wall but gradually had a stronger and stronger inflection point half way up, such that when combined it looked like undulating waves.
+                This was based on previous work by Leonardo .... who wrote a script that produces post-tensioning solutions to stabilise discretised curves.
+                There were tight restrictions on weight and volume of materials, so we decided to laser-print stencils onto corrugated cardboard for folding into boxes on-site.
+                Cardboard tubes and straps were then used for the post-tensioning system.
+                As part of my contribution I helped design and construct LED lighting strips to be fitting to the arches, illuminating the underside of the boxes.
+            </p>
+
+            <img class="col-md-3" src="{% static "images/iass_arch.JPG" %}" alt="Picture of IASS arch" height="auto"/>
+        </div>
         <h2>Professional Experience</h2>
         <p>
             I have completed four work placements in the London office of the structural engineering firm Robert Bird.
@@ -100,7 +106,7 @@
         </p>
         <ul>
             <li>UK driver's license</li>
-            <li>Experience with several programming languages</li>
+            <li>Experience with several programming languages, including C++, C#, VBA, Visual Basic, Matlab and Python</li>
             <li>Grade 6 ISTD Tap Dancing</li>
         </ul>
         <p>

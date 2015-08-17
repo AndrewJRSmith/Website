@@ -14,7 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url, patterns
+from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from website import settings
 admin.autodiscover()
 
 
@@ -28,4 +31,10 @@ urlpatterns = patterns('',
                        url(r'^scrapbook/$', include('scrapbook.urls')),
                        url(r'^structuralengineering/$', 'basic_pages.views.structuralengineering'),
                        url(r'^$', 'basic_pages.views.index'),
-                       )
+                       ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
+
+urlpatterns += patterns('',
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+)
