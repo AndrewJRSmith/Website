@@ -4,7 +4,8 @@
 {% block music_link %}{% endblock %}
 
 {% block body_block %}
-
+{% load staticfiles %}
+{% load static %}
 <div class="container">
     <div class="col-md-12">
         <h1>Music</h1>
@@ -13,11 +14,11 @@
         </p>
         <p>
             In Cambridge I have played with a large variety of music groups.
-            I have been a member of <a href="www.churchilljazzband.com">Churchill Jazz Band</a> for the past 3 years, playing lead trumpet during my first and second years.
+            I have been a member of <a href="http://www.churchilljazzband.com">Churchill Jazz Band</a> for the past 3 years, playing lead trumpet during my first and second years.
             In my second year I also served as Treasurer, and then as Webmaster in my third year while I was at MIT.
             Next year I'm going to be the band's secretary while carrying on my role as Webmaster at the same time.
         </p>
-        <p>Other Cambridge music groups I have played with include</p>
+        <p>Other Cambridge music groups I have played with include:</p>
         <ul>
             <li>CUPO (Cambridge University Pops Orchestra)</li>
             <li>CUBB (Cambridge University Brass Band)</li>
@@ -31,6 +32,9 @@
             Pippin (CUMTS at Ed. Fringe), Seussical (MIT NextAct), Lucky Stiff (MIT MTG), Legally Blonde (MIT MTG), Into The Woods (CUMTS),
             CUMTS Gala Night, The Last Post/The Last Hundred (CUMTS), The Gondoliers (CU GandS), Footlights Panto, West Side Story (RGS),
             Oh! What a Lovely War (Lane End Singers), Oklahoma! (WHS), Bugsy Malone (RGS) + others that I can't remember!
+        </p>
+        <p class="text-center">
+            <img class="img-rounded" src="{% static 'images/music/trumpet.jpg' %}" style="height: 300px;">
         </p>
     </div>
 </div>

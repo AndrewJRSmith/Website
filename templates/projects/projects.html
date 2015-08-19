@@ -11,67 +11,130 @@
 
 
     <div class="container">
-    <div class="col-md-12">
-        <h1>Projects</h1>
-        <p>
-            Welcome to my projects page!
-            Please browse below for more information about projects I have been involved with.
-            This includes both individual and team projects.
-        </p>
-        {%  if Projects %}
-            {% for project in Projects %}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+        <div class="col-md-12">
+            <h1>Projects</h1>
+
+            <p>
+                Welcome to my projects page!
+                Please browse below for more information about projects I have been involved with.
+                This includes both individual and team projects.
+            </p>
+            {% if Projects %}
+                {% for project in Projects %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
                             <h4>{{ project.name }}
-                            {% if project.ongoing %}
-                                <span class="label label-success pull-right">Current</span>
-                            {% else %}
-                                <span class="label label-danger pull-right">Past</span>
-                            {% endif %}
+                                {% if project.ongoing %}
+                                    <span class="label label-success pull-right">Current</span>
+                                {% else %}
+                                    <span class="label label-danger pull-right">Past</span>
+                                {% endif %}
                             </h4>
+                        </div>
+                        <div class="panel-body">
+                            {% if project.short_description %}
+                                <p>
+                                    {{ project.short_description }}
+                                </p>
+                            {% endif %}
+                            {% if project.more_info_button_text %}
+                                <p class="text-center">
+                                    <!--<a class="btn btn-primary btn-small" data-toggle="modal" data-target="#exampleModal" data-whatever="custom data" role="button">{{ project.more_info_button_text }}</a>-->
+                                    <!--<button id="demo" onclick="myFunction" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">open @fat</button>-->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#{{ project.slug }}exampleModal"
+                                            onclick="myFunction('{{ project.name }}','{{ project.long_description }}')">{{ project.more_info_button_text }}</button>
+                                </p>
+                            {% endif %}
+
+                        </div>
                     </div>
-                    <div class="panel-body">
-                    {% if project.short_description %}
-                        <p>
-                            {{ project.short_description }}
-                        </p>
-                    {% endif %}
-                    {% if project.more_info_button_text %}
-                        <p class="text-center">
-                            <!--<a class="btn btn-primary btn-small" data-toggle="modal" data-target="#exampleModal" data-whatever="custom data" role="button">{{ project.more_info_button_text }}</a>-->
-                            <!--<button id="demo" onclick="myFunction" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">open @fat</button>-->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="myFunction('{{ project.name }}','{{ project.long_description }}')">{{ project.more_info_button_text }}</button>
-                        </p>
-                    {% endif %}
 
+
+
+                    <div class="modal fade" id="{{ project.slug }}exampleModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="exampleModalLabel">{{ project.name }} - More
+                                        Information</h4>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="modal-body" id="exampleModalBody">
+                                        {{ project.display_long_description }}
+                                    </div>
+                                    <div class="modal-body">
+
+
+                                        {% if project.images_exist %}
+
+                                            <div id="carousel-example-generic" class="carousel slide"
+                                                 data-ride="carousel">
+                                                <!-- Indicators -->
+                                                <ol class="carousel-indicators">
+                                                    {% for image in ProjectImages %}
+                                                        {% if image.project == project %}
+                                                            <li data-target="#carousel-example-generic"
+                                                                data-slide-to="{{ image.order_id }}"
+                                                                {% if image.order_id == 0 %}class="active"{% endif %}></li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ol>
+
+                                                <!-- Wrapper for slides -->
+                                                <div class="carousel-inner" role="listbox"
+                                                     style="background-color: #9d9d9d;">
+                                                    {% for image in ProjectImages %}
+                                                        {% if image.project == project %}
+                                                            <div class="item{% if image.order_id == 0 %} active{% endif %}">
+                                                                <img src="{{ image.image.url }}"
+                                                                     style="height: 400px; margin: 0 auto">
+
+                                                                <div class="carousel-caption">
+                                                                    {{ image.caption }}
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+
+                                                <!-- Controls -->
+                                                <a class="left carousel-control" href="#carousel-example-generic"
+                                                   role="button" data-slide="prev">
+                                                    <span class="glyphicon glyphicon-chevron-left"
+                                                          aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="right carousel-control" href="#carousel-example-generic"
+                                                   role="button" data-slide="next">
+                                                    <span class="glyphicon glyphicon-chevron-right"
+                                                          aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-            {% endfor %}
-        {% endif %}
 
 
-    </div>
-    </div>
+                {% endfor %}
+            {% endif %}
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="exampleModalLabel">Project - More Information</h4>
-                </div>
-                <div class="modal-body">
 
-                    <div class="modal-body" id="exampleModalBody">
-                        body text here
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+
+
 
 
 
@@ -112,20 +175,20 @@
 
 
     <script>
-    function myFunction(name, description) {
-          //var button = $(event.relatedTarget); // Button that triggered the modal
-          //var recipient = 'recipient';//button.data('whatever') // Extract info from data-* attributes
-          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          //var modal = $(this);
-          //modal.find('.modal-title').text('New message to ' + recipient);
-          //modal.find('.modal-body input').val(recipient);
-        document.getElementById("exampleModalLabel").innerHTML = name.concat(" - More Information");
-        document.getElementById("exampleModalBody").innerHTML = description;
-    }
+        function myFunction(name, description) {
+            //var button = $(event.relatedTarget); // Button that triggered the modal
+            //var recipient = 'recipient';//button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            //var modal = $(this);
+            //modal.find('.modal-title').text('New message to ' + recipient);
+            //modal.find('.modal-body input').val(recipient);
+            document.getElementById("exampleModalLabel").innerHTML = name.concat(" - More Information");
+            document.getElementById("exampleModalBody").innerHTML = description;
+        }
     </script>
 {% endblock %}
 
 {% block extra_js %}
-<script type="text/javascript" src="{{ STATIC_URL }}js/projects.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/projects.js"></script>
 {% endblock %}
